@@ -1,0 +1,40 @@
+import json
+ 
+# Sample quiz data
+quiz_data = {
+    "questions": [
+        {
+            "question": "How many faces does a Dodecahedron have?",
+            "options": ["A) 18", "B) 15", "C) 12", "D) 10"],
+            "answer": "C"
+        },
+        {
+            "question": "How many dots appear on a pair of dice?",
+            "options": ["A) 24", "B) 42", "C) 48", "D) 52"],
+            "answer": "B"
+        },
+        {
+            "question": "Who wrote 'Huckleberry Finn'?",
+            "options": ["A) Harper Lee", "B) J.K. Rowling", "C) Ernest Hemingway", "D) Mark Twain"],
+            "answer": "D"
+        }
+    ]
+}
+ 
+# Function to run the quiz
+def run_quiz(quiz_data):
+    score = 0
+    for i, question in enumerate(quiz_data["questions"]):
+        print(f"Q{i+1}: {question['question']}")
+        for option in question["options"]:
+            print(option)
+        answer = input("Your answer: ").strip().upper()
+        if answer == question["answer"]:
+            score += 1
+            print("Correct!\n")
+        else:
+            print(f"Incorrect! The correct answer is {question['answer']}\n")
+    print(f"Your final score is {score}/{len(quiz_data['questions'])}")
+ 
+# Run the quiz
+run_quiz(quiz_data)
