@@ -34,7 +34,7 @@ def run_quiz(quiz_data):
             print("Correct!\n")
         else:
             print(f"Incorrect! The correct answer is {question['answer']}\n")
-    print(f"Your final score is {score}/{len(quiz_data['questions'])}")
+    print(f"Your final score is {score}/{len(quiz_data['questions'])}, thanks for playing!")
  
 # Run the quiz
 run_quiz(quiz_data)
